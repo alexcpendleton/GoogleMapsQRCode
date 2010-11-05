@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name           Google Maps QR
 // @namespace      http://userscripts.org/users/120060
-// @include        http://maps.google.com/maps*
+// @include        http://maps.google.com/*
 // @description    Generates a QR code for the current map for scanning to your phone or other device.
 // ==/UserScript==
 
 (function() {
 	var settings = {
 		size:"500",
-		top:"10px",
+		top:"80px",
 		left:"10px"
 	}
 	var img = undefined;
