@@ -52,24 +52,27 @@
 			divider.setAttribute("src", "http://maps.gstatic.com/intl/en_us/mapfiles/transparent.png");
 			divider.setAttribute("jstcache", "0");
 			
-			var link = document.createElement("a");
-			link.setAttribute("id", "qrlink");
-			link.setAttribute("href", "javascript:void(0)");
-			link.addEventListener("click", toggle, false);
+			var qrlink = document.createElement("a");
+			qrlink.setAttribute("id", "qrlink");
+			qrlink.setAttribute("href", "javascript:void(0)");
+			qrlink.addEventListener("click", toggle, false);
 			
 			var icon = document.createElement("img");
 			icon.setAttribute("class","bar-icon bar-icon-link2");
-			icon.setAttribute("src", "http://maps.gstatic.com/intl/en_us/mapfiles/transparent.png");
+			icon.setAttribute("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oLBQ4cF1BFoVoAAAAdaVRYdENvbW1lbnQAAAAAAENyZWF0ZWQgd2l0aCBHSU1QZC5lBwAAAIhJREFUOMuVkkkOwDAIA+0o//8yPVRI1DU05ZTFATyBAAImIgIkEXFfk3Qy7BTXSLGeO92qG61ycrYwhFZsLXTiyqC1MUF0XF5FYuizg/mw0GXOR/mdurbf6DxrB5pktKAwtQDJGaK266ZyfxGviRzUPRGvIJVR6jcOQpPX/a9JbC10s9CBrfoLHbB0JqNruv4AAAAASUVORK5CYII=");
+			icon.setAttribute("height", "16");
+			icon.setAttribute("width", "16");
+			icon.setAttribute("style", "margin:0 4px 0 4px;")
 			icon.setAttribute("jstcache", "0");
-			link.appendChild(icon);
+			qrlink.appendChild(icon);
 			
 			var linkText = document.createElement("span");
 			linkText.appendChild(document.createTextNode("QR"));
 			linkText.setAttribute("class", "link-text");
-			link.appendChild(linkText);
+			qrlink.appendChild(linkText);
 						
 			targets.parentNode.appendChild(divider);
-			targets.parentNode.appendChild(link);
+			targets.parentNode.appendChild(qrlink);
 			
 			img = createQRimage();
 			document.getElementById("main").appendChild(img);
@@ -77,4 +80,5 @@
 	}
 
 	addQRLink();
+
 })();
